@@ -11,14 +11,18 @@ from typing import Optional
 from jqdatasdk import *
 from data_source import DataSource
 from DataSource.models import Security
+from utils.kit_env import get_join_quant_conf
 
 
 class JoinQuant(DataSource):
 
-    def __init__(self, jq_username, jq_password, host=None, port=None, username=None, password=None, database=None):
+    def __init__(self, jq_username=None, jq_password=None,
+                 host=None, port=None, username=None, password=None, database=None):
         super().__init__(host=host, port=port, username=username, password=password, database=database)
-        self.username = jq_username
-        self.password = jq_password
+        # 尝试默认配置
+        conf = get_join_quant_conf()
+        self.username = conf["USERNAME"] if jq_username is None else jq_username
+        self.password = conf["PASSWORD"] if jq_password is None else jq_password
 
     def login(self):
         print("-" * 100)

@@ -25,7 +25,7 @@
 - 创建
 
 ```shell
-conda create -n Quant=3.9
+conda create -n Quant python=3.9
 ```
 
 - 激活
@@ -44,4 +44,14 @@ conda install --yes --file requirements.txt
 
 ```shell
 deactivate
+```
+
+- 加速(可选)
+
+添加清华源
+
+```shell
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r/
 ```
