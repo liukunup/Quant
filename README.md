@@ -20,6 +20,21 @@
 - 模拟类
 - 工具类 utils
 
+## 配置环境变量
+
+```dotenv
+# 数据库配置
+MYSQL_HOST=127.0.0.1
+MYSQL_PORT=3306
+MYSQL_USERNAME=root
+MYSQL_PASSWORD=123456
+MYSQL_DATABASE=quant
+
+# 聚宽数据
+JQ_USERNAME=your_phone_number
+JQ_PASSWORD=your_password
+```
+
 ## 环境搭建
 
 - 创建
